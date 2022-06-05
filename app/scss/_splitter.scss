@@ -99,6 +99,11 @@
             background-color: u.$StrongCyan-OpHalf;
             transition: all .15s ease-in-out;
         }
+
+        &:active {
+            transform: scale(0.95);
+            transform-origin: center;
+        }
     }
 
     #custom {
@@ -234,6 +239,11 @@
             background-color: u.$StrongCyan-Light;
             opacity: 1;
             transition: all .15s ease-in-out;
+        }
+
+        &:active {
+            transform: scale(0.96);
+            transform-origin: center;
         }
     }
 }
