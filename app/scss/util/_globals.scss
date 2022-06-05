@@ -1,0 +1,52 @@
+@use "colors" as *;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2.4rem;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+p {
+    color: $DarkGrayishCyan;
+    font-size: 1.6rem;
+}
+
+button {
+    border: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    outline: none;
+    text-align: right;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+}
+
+input[type="number"] { 
+    -moz-appearance: textfield; 
+} 
+

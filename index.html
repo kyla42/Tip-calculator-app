@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/style.css">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+
+  <main class="main">
+    <div class="container">
+
+        <div class="title">
+          <img src="./images/logo.svg" alt="splitter logo">
+        </div>
+        <div class="box">
+
+          <!-- left side -->
+          <div class="calc">
+
+            <div class="calc__item">
+              <p class="text">Bill</p>
+              <input type="number" value="" name="bill" id="bill" placeholder="0">
+            </div>
+
+            <div class="calc__item">
+              <p class="text-mgb">Select Tip %</p>
+                <div class="tip-btns-grid">
+                  <button class="tip" id="5per">5%</button>
+                  <button class="tip" id="10per">10%</button>
+                  <button class="tip" id="15per">15%</button>
+                  <button class="tip" id="25per">25%</button>
+                  <button class="tip" id="50per">50%</button>
+                  <input type="number" value="" name="custom" id="custom" placeholder="Custom">
+                </div>
+            </div>
+
+            <div class="calc__item">
+              <p class="text numOfPpl">Number of People <span>Can't be zero</span></p>
+              <input type="number" value="" name="people" id="people" placeholder="0">
+            </div>
+
+          </div>
+
+          <!-- right side -->
+          <div class="result">
+
+            <div class="result__item">
+              <p class="text">Tip Amount<span>/ person</span></p>
+              <input type="text" value="" name="" id="tipAmount" placeholder="$0.00" disabled>
+            </div>
+
+            <div class="result__item">
+              <p class="text">Total<span>/ person</span></p>
+              <input type="text" value="" name="" id="total" placeholder="$0.00" disabled>
+            </div>
+
+            <button id="reset">RESET</button>
+
+          </div>
+        </div>
+
+    </div>
+  </main>
+
+  <script src="./app/js/script.js" defer></script>
+</body>
+</html>

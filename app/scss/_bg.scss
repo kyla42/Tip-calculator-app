@@ -1,0 +1,27 @@
+@use "util" as u;
+
+.main {
+    background-color: u.$BackGround;
+    display: flex;
+}
+
+.container {
+    max-width: 144rem;
+    height: 102.4rem;
+    margin: auto;
+    @extend %fxcol;
+
+    @include u.bp(md) {
+        height: auto;
+        margin: 5rem auto;
+    }
+}
+
+.title {
+    margin: 16.3rem auto 8.7rem auto;
+    @extend %fx-jc-c;
+
+    @include u.bp(md) {
+        margin: 0 auto 5rem auto;
+    }
+}

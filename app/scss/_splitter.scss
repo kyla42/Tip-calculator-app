@@ -1,0 +1,239 @@
+@use "util" as u;
+
+.box {
+    width: 92rem;
+    height: 48.1rem;
+    margin: 0 auto;
+    background-color: u.$White;
+    border-radius: 2.5rem;
+    box-shadow: 0 3rem 3rem hsla(183, 100%, 15%, 0.1);
+    display: flex;
+
+    @include u.bp(md) {
+        width: 47.4rem;
+        height: 90rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @include u.bp(sm) {
+        width: 37.5rem;
+        height: auto;
+    }
+}
+
+// Calc section
+.calc {
+    width: 38rem;
+    margin: 4.5rem 4.7rem 4.8rem 4.8rem;
+    @extend %fxcol-jc-sb, %fxcol-ai-c;
+
+    @include u.bp(md) {
+        height: 37.8rem;
+    }
+
+    @include u.bp(sm) {
+        width: 37.5rem;
+        height: 42rem;
+        margin: 3rem;
+    }
+
+    &__item {
+        width: 100%;
+
+        @include u.bp(sm) {
+            width: 30rem;      
+        }
+
+        .text {
+            margin-bottom: 0.6rem;
+
+            &-mgb {
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        .numOfPpl {
+            @extend %fx-jc-sb;
+
+            span {
+                display: none;
+            }
+
+            &.err {
+                span {
+                    display: flex;
+                    color: u.$error;
+                }         
+            }
+        }
+    }
+
+    .tip-btns-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 11.7rem);
+        grid-template-rows: repeat(2, 4.8rem);
+        column-gap: 1.4rem;
+        row-gap: 1.6rem;
+
+        @include u.bp(sm) {
+            grid-template-columns: repeat(2, 47%);
+            grid-template-rows: repeat(3, 4.8rem);
+            column-gap: 6%;
+        }
+    }
+
+    %tip-btn-base {
+        font-size: 2.4rem;
+        border-radius: 0.5rem;
+    }
+
+    .tip {
+        @extend %tip-btn-base;
+        color: u.$VeryLightGrayishCyan;
+        background-color: u.$VeryDarkCyan;
+
+        &:hover {
+            color: u.$VeryDarkCyan;
+            background-color: u.$StrongCyan-OpHalf;
+            transition: all .15s ease-in-out;
+        }
+    }
+
+    #custom {
+        @extend %tip-btn-base;
+        padding: 0 1rem 0 1rem;
+        color: u.$VeryDarkCyan;
+        background-color: u.$VeryLightGrayishCyan !important;
+
+        &::placeholder {
+            color: hsla(183, 100%, 15%, 0.7);
+            text-align: center;
+        }
+
+        &:hover {
+            border: 0.2rem solid u.$StrongCyan;
+        }
+    }
+
+    #bill,
+    #people {
+        width: 38rem;
+        height: 4.8rem;
+        padding-right: 1.7rem;
+        color: u.$VeryDarkCyan;
+        font-size: 2.4rem;
+        border-radius: 0.5rem;
+
+        @include u.bp(sm) {
+            width: 30rem;
+        }
+
+        &::placeholder {
+            color: hsla(184, 14%, 56%, 0.7);
+        }
+
+        &:hover {
+            border: 0.2rem solid u.$StrongCyan;
+        }
+
+        &.err {
+            border: 0.2rem solid u.$error;
+        }
+    }
+
+    #bill {
+        background: url(/images/icon-dollar.svg) no-repeat center left 1.9rem u.$VeryLightGrayishCyan;         
+    }
+
+    #people {
+        background: url(/images/icon-person.svg) no-repeat center left 1.7rem u.$VeryLightGrayishCyan;
+    }
+}
+
+// result section
+.result {
+    position: relative;
+    width: 41.3rem;
+    height: 41.7rem;
+    margin: 3.2rem 3.2rem 3.2rem 0;
+    padding: 3.8rem 3.6rem 3.8rem 4rem;
+    background-color: u.$VeryDarkCyan;
+    border-radius: 1.5rem;
+
+    @include u.bp(md) {
+        margin: 2rem;
+    }
+
+    @include u.bp(sm) {
+        width: 32rem;
+        height: auto;
+        margin: 3rem;
+        padding: 2rem;
+    }
+
+    &__item {
+        height: 8rem;
+        margin-bottom: 1.6rem;
+        @extend %fx-jc-sb, %fx-ai-c;
+
+        @include u.bp(sm) {
+            height: auto;
+        }
+    }
+
+    .text {
+        color: hsla(0, 0%, 100%, 0.9);
+        @extend %fxcol;
+
+        span {
+            color: hsla(0, 0%, 100%, 0.4);
+            font-size: 1.3rem; 
+        }
+    }
+
+    #tipAmount,
+    #total {
+        width: 23rem;
+        padding-bottom: 0.5rem;
+        color: u.$StrongCyan;
+        font-size: 4.8rem;
+        transform: scaleX(0.97);
+        background-color: transparent;
+        cursor: auto;
+
+        @include u.bp(sm) {
+            width: 60%;
+            font-size: 3.2rem;
+        }
+
+        &::placeholder {
+            color: u.$StrongCyan;
+        }
+    }
+
+    #reset {
+        position: absolute;
+        bottom: 4rem;
+        width: 33.3rem;
+        height: 4.8rem;
+        color: u.$VeryDarkCyan;
+        font-size: 2rem;
+        background-color: u.$StrongCyan;
+        border-radius: 0.6rem;
+        opacity: 0.2;
+        transition: all .15s ease-in-out;
+
+        @include u.bp(sm) {
+            position: static;
+            width: 100%;      
+        }
+
+        &:hover {
+            background-color: u.$StrongCyan-Light;
+            opacity: 1;
+            transition: all .15s ease-in-out;
+        }
+    }
+}
