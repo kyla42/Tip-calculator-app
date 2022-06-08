@@ -19,32 +19,6 @@ const resetBtn = document.getElementById("reset");
 
 const numPpl = document.querySelector(".numOfPpl");
 
-// function btnResult(i) {
-//     switch(i) {
-//         case 0:
-//             tipAmount.value = "$" + Math.round(bill.value * 0.05 / people.value * 100) / 100;
-//             total.value = "$" + Math.round(bill.value * 1.05 / people.value * 100) / 100;
-//             break;
-//         case 1:
-//             tipAmount.value = "$" + Math.round(bill.value * 0.1 / people.value * 100) / 100;
-//             total.value = "$" + Math.round(bill.value * 1.1 / people.value * 100) / 100;
-//             break;
-//         case 2:
-//             tipAmount.value = "$" + Math.round(bill.value * 0.15 / people.value * 100) / 100;
-//             total.value = "$" + Math.round(bill.value * 1.15 / people.value * 100) / 100;
-//             break;
-//         case 3:
-//             tipAmount.value = "$" + Math.round(bill.value * 0.25 / people.value * 100) / 100;
-//             total.value = "$" + Math.round(bill.value * 1.25 / people.value * 100) / 100;
-//             break;
-//         case 4:
-//             tipAmount.value = "$" + Math.round(bill.value * 0.5 / people.value * 100) / 100;
-//             total.value = "$" + Math.round(bill.value * 1.5 / people.value * 100) / 100;
-//             break;
-//     }
-// }
-
-
 // Tip (button)
 function tipCalc(t) {
     tipAmount.value = `$${Math.round(bill.value * t / people.value * 100) / 100}`;
@@ -81,7 +55,6 @@ for (let i = 0; i < per.length; i++) {
         per[i].style.backgroundColor = "hsl(172, 67%, 45%)";
         per[i].style.color = "hsl(183, 100%, 15%)";
         resetBtn.style.opacity = "1";
-        // bill.disabled = true;
 
         if (people.value === "") {
             numPpl.classList.add("err");
@@ -139,5 +112,4 @@ reset.addEventListener("click", function(){
     numPpl.classList.remove("err");
     people.classList.remove("err");
     resetBtn.style = null;
-    // bill.disabled = false;
 })
