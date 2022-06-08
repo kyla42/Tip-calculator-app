@@ -19,29 +19,54 @@ const resetBtn = document.getElementById("reset");
 
 const numPpl = document.querySelector(".numOfPpl");
 
+// function btnResult(i) {
+//     switch(i) {
+//         case 0:
+//             tipAmount.value = "$" + Math.round(bill.value * 0.05 / people.value * 100) / 100;
+//             total.value = "$" + Math.round(bill.value * 1.05 / people.value * 100) / 100;
+//             break;
+//         case 1:
+//             tipAmount.value = "$" + Math.round(bill.value * 0.1 / people.value * 100) / 100;
+//             total.value = "$" + Math.round(bill.value * 1.1 / people.value * 100) / 100;
+//             break;
+//         case 2:
+//             tipAmount.value = "$" + Math.round(bill.value * 0.15 / people.value * 100) / 100;
+//             total.value = "$" + Math.round(bill.value * 1.15 / people.value * 100) / 100;
+//             break;
+//         case 3:
+//             tipAmount.value = "$" + Math.round(bill.value * 0.25 / people.value * 100) / 100;
+//             total.value = "$" + Math.round(bill.value * 1.25 / people.value * 100) / 100;
+//             break;
+//         case 4:
+//             tipAmount.value = "$" + Math.round(bill.value * 0.5 / people.value * 100) / 100;
+//             total.value = "$" + Math.round(bill.value * 1.5 / people.value * 100) / 100;
+//             break;
+//     }
+// }
+
 
 // Tip (button)
+function tipCalc(t) {
+    tipAmount.value = `$${Math.round(bill.value * t / people.value * 100) / 100}`;
+    total.value = `$${Math.round(bill.value * (t + 1) / people.value * 100) / 100}`;
+}
+
 function btnResult(i) {
     switch(i) {
         case 0:
-            tipAmount.value = "$" + Math.round(bill.value * 0.05 / people.value * 100) / 100;
-            total.value = "$" + Math.round(bill.value * 1.05 / people.value * 100) / 100;
+            tipCalc(0.05);
             break;
         case 1:
-            tipAmount.value = "$" + Math.round(bill.value * 0.1 / people.value * 100) / 100;
-            total.value = "$" + Math.round(bill.value * 1.1 / people.value * 100) / 100;
+            tipCalc(0.1);
             break;
         case 2:
-            tipAmount.value = "$" + Math.round(bill.value * 0.15 / people.value * 100) / 100;
-            total.value = "$" + Math.round(bill.value * 1.15 / people.value * 100) / 100;
+            tipCalc(0.15);
             break;
         case 3:
-            tipAmount.value = "$" + Math.round(bill.value * 0.25 / people.value * 100) / 100;
-            total.value = "$" + Math.round(bill.value * 1.25 / people.value * 100) / 100;
+            tipCalc(0.25);
             break;
         case 4:
-            tipAmount.value = "$" + Math.round(bill.value * 0.5 / people.value * 100) / 100;
-            total.value = "$" + Math.round(bill.value * 1.5 / people.value * 100) / 100;
+            tipCalc(0.5);
             break;
     }
 }
@@ -77,8 +102,8 @@ for (let i = 0; i < per.length; i++) {
 
 // Tip (custom)
 function customResult(){
-    tipAmount.value = "$" + Math.round(bill.value * (custom.value / 100) / people.value * 100) / 100;
-    total.value = "$" + Math.round (bill.value * ((custom.value / 100) + 1)/ people.value * 100) / 100;
+    tipAmount.value = `$${Math.round(bill.value * (custom.value / 100) / people.value * 100) / 100}`;
+    total.value = `$${Math.round (bill.value * ((custom.value / 100) + 1)/ people.value * 100) / 100}`;
 }
 
 custom.addEventListener("input", function(){
